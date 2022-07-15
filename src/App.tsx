@@ -1,19 +1,18 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
-
+import { IssueList, NewIssue } from "./pages";
 
 const queryClient = new QueryClient();
 
 function App() {
-
   return (
     <QueryClientProvider client={queryClient}>
-        <Router>
-      <Routes>
-        <Route element={<Home />} path="/" />
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route element={<NewIssue />} path="/new" />
+          <Route element={<IssueList />} path="/issues" />
+        </Routes>
+      </Router>
     </QueryClientProvider>
   );
 }
