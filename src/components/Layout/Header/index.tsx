@@ -1,5 +1,7 @@
+import React from "react";
 import { createStyles, Navbar, Box } from "@mantine/core"
 import { Bell } from "react-feather"
+import { useIssues } from "../../../hooks/useIssues";
 
 const useStyles = createStyles((theme) => ({
     container: {
@@ -41,12 +43,14 @@ const useStyles = createStyles((theme) => ({
 
 export const Header = () => {
     const { classes } = useStyles();
+
+    const { data, isLoading, isError } = useIssues();
     return <Navbar className={classes.container}>
         <Navbar.Section className={classes.header}>JiraBoard</Navbar.Section>
 
         <Navbar.Section className={classes.options}>
             <Box style={{ position: "relative" }}>
-            <Box className={classes.badge}>2</Box>
+            {( isLoading || isError && !data?.total) ? null : <Box className={classes.badge}> {data?.total} </Box> }
             <Bell className={classes.icons} size={18} />
             </Box>
         </Navbar.Section>

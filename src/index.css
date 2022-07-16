@@ -6,3 +6,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html, body, #root {
+    height: 100%;
+    background-color: #fefefe;
+}
+
+ a {
+    text-decoration: none;
+    color: #000;
+ }
