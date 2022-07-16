@@ -6,7 +6,7 @@ import type { IssueResponse } from "../../@types/issues";
 export const useIssues = () => {
   return useQuery<IssueResponse>(QUERY_KEY.ISSUES, async () => {
     const res = await fetch(
-        "http://localhost:8080/issues",
+        "https://nameless-reef-80364.herokuapp.com/issues",
       );
 
     return await res.json();

@@ -5,7 +5,8 @@ import axios from "axios";
 import dotenv from "dotenv";
 import path from "path";
 
-dotenv.config({ path: path.resolve(__dirname, "../.env") });
+dotenv.config();
+// dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 const app = express();
 app.use(bodyParser.json());
@@ -56,6 +57,6 @@ app.post("/issues", async (req, res) => {
     }
 })
 
-app.listen(8080, () => {
-  console.log("Server is listening on port 8080");
+app.listen(process.env.PORT, () => {
+  console.log("Server is listening on port" + process.env.PORT);
 });

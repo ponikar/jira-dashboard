@@ -7,7 +7,7 @@ export const useCreateIssue = () => {
   return useMutation(QUERY_KEY.CREATE_ISSUE, async (data: typeof NEW_ISSUE_INITIAL_STATE) => {
 
     console.log("DATA", data);
-    const res = await fetch(`http://localhost:8080/issues`, {
+    const res = await fetch(`https://nameless-reef-80364.herokuapp.com/issues`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
