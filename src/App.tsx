@@ -14,8 +14,8 @@ function App() {
         <NotificationsProvider>
           <Router>
             <Routes>
+              <Route element={<IssueList />} path="/" />
               <Route element={<NewIssue />} path="/new" />
-              <Route element={<IssueList />} path="/issues" />
             </Routes>
           </Router>
         </NotificationsProvider>
