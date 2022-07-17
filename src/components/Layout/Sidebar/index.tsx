@@ -11,7 +11,7 @@ export const Sidebar = () => {
     const { classes } = useStyles();
     return  <Aside className={classes.sidebar}>
     <Text className={classes.title} size="lg">Menu</Text>
-    <Option to="/new" title="New Issue" Icon={Edit} />
+    <Option to="/" title="New Issue" Icon={Edit} />
     <Option to="/issues" title="All Issues" Icon={List} />
   </Aside>
 }   
